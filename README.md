@@ -3,6 +3,6 @@ python-web_hw_06
 
 Для отримання результату запиту до бази даних необхідно у командному рядку виконати команду 
 
-    python3 make_query.py query_N.sql,
+    python3 make_query.py query_N.sql
 
  де N - номер відповідного запиту.
