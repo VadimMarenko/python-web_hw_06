@@ -23,7 +23,7 @@ def get_sql():
                     pprint(line[2:n])
             return sql
     except FileNotFoundError as err:
-        pprint(f"{file_sql} no information contains")
+        pprint(f"File {file_sql} does not exist")
         return ""
 
 
