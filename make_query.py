@@ -16,6 +16,11 @@ def get_sql():
     try:
         with open(file_sql, "r") as f:
             sql = f.read()
+            f.seek(0)
+            for line in f:
+                if line.startswith("--"):
+                    n = line.find("\n")
+                    pprint(line[2:n])
             return sql
     except FileNotFoundError as err:
         pprint(f"{file_sql} no information contains")
