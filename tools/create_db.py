@@ -6,14 +6,11 @@ file_sql = "./create_hw_06_db.sql"
 
 
 def create_db(db_file, sql_file):
-    # читаємо файл зі скриптом для створення БД
     with open(sql_file, "r") as f:
         sql = f.read()
 
-    # створюємо з'єднання з БД (якщо файлу з БД немає, він буде створений)
     with sqlite3.connect(db_file) as con:
         cur = con.cursor()
-        # виконуємо скрипт із файлу, який створить таблиці в БД
         cur.executescript(sql)
 
 
