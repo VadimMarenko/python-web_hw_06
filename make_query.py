@@ -13,9 +13,13 @@ def get_sql():
     args = vars(parser.parse_args())
     file_sql = args.get("file_sql")
 
-    with open(file_sql, "r") as f:
-        sql = f.read()
-        return sql
+    try:
+        with open(file_sql, "r") as f:
+            sql = f.read()
+            return sql
+    except FileNotFoundError as err:
+        pprint(f"{file_sql} no information contains")
+        return ""
 
 
 def execute_query(sql: str) -> list:
